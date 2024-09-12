@@ -60,7 +60,7 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "# TODO: Install, build, deploy in both apps"
-            eb init -p node.js duylvs-udagram-api --region us-east-1
+            eb init -p node.js udagram-api --region us-east-1
             eb setenv POSTGRES_HOST=$POSTGRES_HOST
             eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
             eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
@@ -78,8 +78,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
-          type: approval
+                - master
           requires:
             - build
       - deploy:
