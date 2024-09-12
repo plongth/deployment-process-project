@@ -46,8 +46,6 @@ jobs:
   deploy:
     docker:
       - image: "cimg/base:stable"
-      - environment:
-          CHROME_BIN: /usr/bin/google-chrome
       # more setup needed for aws, node, elastic beanstalk
     steps:
       - node/install:
@@ -79,6 +77,7 @@ workflows:
             branches:
               only:
                 - master
+          type: approval
           requires:
             - build
       - deploy:
