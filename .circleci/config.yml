@@ -35,7 +35,7 @@ jobs:
           name: Front-End Build
           command: |
             echo "TODO: Build the frontend app"
-            npm run frontend:install
+            npm run frontend:build
       # TODO: Build the backend API
       - run:
           name: API Build
@@ -67,7 +67,6 @@ jobs:
             eb setenv AWS_REGION=$AWS_REGION
             eb setenv AWS_PROFILE=$AWS_PROFILE
             eb setenv JWT_SECRET=$JWT_SECRET
-            eb setenv AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
             npm run deploy
 workflows:
   udagram:
